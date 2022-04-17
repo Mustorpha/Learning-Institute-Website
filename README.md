@@ -1,5 +1,8 @@
 # Learning-Institute-Website
 A Learning dynamic website - Django Application
+
+
+
 ![f](https://user-images.githubusercontent.com/90624890/163732048-030fabbe-6f42-4a0e-af27-a4e4623d84ba.JPG)
 ![ooo](https://user-images.githubusercontent.com/90624890/163732073-754d045e-7dd3-49bc-b75b-1e8882ad0d2e.JPG)
 ![tt](https://user-images.githubusercontent.com/90624890/163732074-77d75e07-a86f-4232-9c6d-b6ef4fe94f0b.JPG)
