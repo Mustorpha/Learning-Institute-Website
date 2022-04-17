@@ -1,0 +1,67 @@
+/*=========================
+	All css
+==========================*/
+@import url("../vendors/bootstrap/css/bootstrap.min.css");
+@import url("../vendors/fontawesome/css/font-awesome.min.css");
+@import url("../vendors/themify/themify-icons.css");
+@import url("../vendors/owl-carousel/owl.carousel.css");
+@import url("../vendors/bootstrap-select/bootstrap-select.min.css");
+@import url("../vendors/magnific-popup/magnific-popup.css");
+@import url("../vendors/scroll/scrollbar.css");
+@import url("../vendors/switcher/switcher.css");
+@import url("styles/arta.css");
+@import url("styles/ascetic.css");
+@import url("styles/atelier-dune.dark.css");
+@import url("styles/atelier-dune.light.css");
+@import url("styles/atelier-forest.dark.css");
+@import url("styles/atelier-forest.light.css");
+@import url("styles/atelier-heath.dark.css");
+@import url("styles/atelier-heath.light.css");
+@import url("styles/atelier-lakeside.dark.css");
+@import url("styles/atelier-lakeside.light.css");
+@import url("styles/atelier-seaside.dark.css");
+@import url("styles/atelier-seaside.light.css");
+@import url("styles/brown_paper.css");
+@import url("styles/dark.css");
+@import url("styles/default.css");
+@import url("styles/docco.css");
+@import url("styles/far.css");
+@import url("styles/foundation.css");
+@import url("styles/github.css");
+@import url("styles/googlecode.css");
+@import url("styles/idea.css");
+@import url("styles/ir_black.css");
+@import url("styles/magula.css");
+@import url("styles/mono-blue.css");
+@import url("styles/monokai.css");
+@import url("styles/monokai_sublime.css");
+@import url("styles/obsidian.css");
+@import url("styles/paraiso.dark.css");
+@import url("styles/paraiso.light.css");
+@import url("styles/pojoaque.css");
+@import url("styles/railscasts.css");
+@import url("styles/rainbow.css");
+@import url("styles/school_book.css");
+@import url("styles/solarized_dark.css");
+@import url("styles/solarized_light.css");
+@import url("styles/sunburst.css");
+@import url("styles/tomorrow-night-blue.css");
+@import url("styles/tomorrow-night-bright.css");
+@import url("styles/tomorrow-night-eighties.css");
+@import url("styles/tomorrow-night.css");
+@import url("styles/tomorrow.css");
+@import url("styles/vs.css");
+@import url("styles/xcode.css");
+@import url("styles/zenburn.css");
+
+/*=========================
+	All css
+==========================*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Raleway:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900|Rubik:300,400,500,700,900');
+
+/*
+font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
