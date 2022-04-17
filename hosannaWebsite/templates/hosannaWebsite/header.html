@@ -1,0 +1,329 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- META ============================================= -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Hosanna Computer Institute College E-learning Online" />
+    <meta name="author" content="ICT Department" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Hosanna Computer Institute Website" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Hosanna" />
+    <meta property="og:description" content="Website" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="">
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}" />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>{{title}} | Hosanna Computer Institute</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+	<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/assets.css' %}">
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/typography.css' %}">
+
+    <!-- SHORTCODES ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/shortcodes/shortcodes.css' %}">
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <link class="skin" rel="stylesheet" type="text/css" href="{% static 'assets/css/color/color-1.css' %}">
+
+</head>
+
+<body id="bg">
+    <div class="page-wraper">
+        <div id="loading-icon-bx"></div>
+
+        <!-- Header Top ==== -->
+        <header class="header rs-nav">
+            <div class="sticky-header navbar-expand-lg">
+                <div class="menu-bar clearfix">
+                    <div class="container clearfix">
+                        <!-- Header Logo ==== -->
+                        <div class="menu-logo">
+                            <a href="{% url 'home-url' %}"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                        </div>
+                        <!-- Mobile Nav Button ==== -->
+                        <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+                        <!-- Author Nav ==== -->
+                        <div class="secondary-menu">
+                            <div class="secondary-inner">
+                                <ul>
+                                    <li><a href="https://facebook.com/Hosanna-Printing-Copy-Center-100981805064433/" class="btn-link"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://wa.me/9054591086?text=Hello%20from%20Hosanna%20Computer%20Institute" class="btn-link"><i class="fa fa-whatsapp"></i></a></li>
+                                    <li><a href="tel:+2348034887708" class="btn-link"><i class="fa fa-phone"></i></a></li>
+                                    <li><a href="https://twitter.com/JMustorpha" class="btn-link"><i class="fa fa-twitter"></i></a></li>
+                                    <!-- Search Button ==== -->
+                                    <li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Search Box ==== -->
+                        <div class="nav-search-bar">
+                            <form action="{% url 'course-url' %}">
+                                {% csrf_token %}
+                                <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
+                                <span><i class="ti-search"></i></span>
+                            </form>
+                            <span id="search-remove"><i class="ti-close"></i></span>
+                        </div>
+                        <!-- Navigation Menu ==== -->
+                        <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
+                            <div class="menu-logo">
+                                <a href="{% url 'home-url' %}"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                            </div>
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="{% url 'home-url' %}">Home</a>
+                                </li>
+                                <li><a href="{% url 'about-url' %}">About</a></li>
+                                <li><a href="{% url 'course-url' %}">Courses</a></li>
+                                <li><a href="{% url 'news-url' %}">News</a></li>
+                                <li><a href="{% url 'event-url' %}">Events</a></li>
+                                <li><a href="{% url 'contact-url' %}">Contact</a></li>
+                            </ul>
+                            <div class="nav-social-link">
+                                <a href="#" class="btn-link"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="btn-link"><i class="fa fa-whatsapp"></i></a>
+                                <a href="#" class="btn-link"><i class="fa fa-phone"></i></a>
+                                <a href="#" class="btn-link"><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <!-- Navigation Menu END ==== -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header END ==== -->
+        {% block content %}{% endblock content %}
+        <!-- Footer ==== -->
+        <footer>
+            <div class="footer-top">
+                <div class="pt-exebar">
+                    <div class="container">
+                        <div class="d-flex align-items-stretch">
+                            <div class="pt-logo mr-auto">
+                                <a href="{% url 'home-url' %}"><img src="{% static 'assets/images/logo-white.png' %}" alt="" /></a>
+                            </div>
+                            <div class="pt-social-link">
+                                <ul class="list-inline m-a0">
+                                    <li><a href="https://facebook.com/Hosanna-Printing-Copy-Center-100981805064433/" class="btn-link"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://wa.me/9054591086?text=Hello%20from%20Hosanna%20Computer%20Institute" class="btn-link"><i class="fa fa-whatsapp"></i></a></li>
+                                    <li><a href="tel:+2348034887708" class="btn-link"><i class="fa fa-phone"></i></a></li>
+                                    <li><a href="https://twitter.com/JMustorpha" class="btn-link"><i class="fa fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pt-btn-join">
+                                <a href="{% url 'course-url' %}" class="btn ">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
+                            <div class="widget">
+                                <h5 class="footer-title">Sign Up For A Updates</h5>
+                                <p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on educational activities.</p>
+                                <div class="subscribe-form m-b20">
+                                    <form class="" action="{% url 'subscription-url' %}" method="post">
+                                        {% csrf_token %}
+                                        <div class="ajax-message"></div>
+                                        <div class="input-group">
+                                            <input name="subscription" class="form-control" placeholder="Email Address" type="email">
+                                            <input type="hidden" name="next" value="{{ request.path }}">
+                                            <span class="input-group-btn">
+                                        <button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
+                                    </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 col-md-7 col-sm-12">
+                            <div class="row">
+                                <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                                    <div class="widget footer_widget">
+                                        <h5 class="footer-title">Institute</h5>
+                                        <ul>
+                                            <li><a href="{% url 'home-url' %}">Home</a></li>
+                                            <li><a href="{% url 'about-url' %}">About</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                                    <div class="widget footer_widget">
+                                        <h5 class="footer-title">Get In Touch</h5>
+                                        <ul>
+                                            <li><a href="{% url 'news-url' %}">Blog</a></li>
+                                            <li><a href="{% url 'contact-url' %}">Contact</a></li>
+                                            <li><a href="{% url 'event-url' %}">Event</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                                    <div class="widget footer_widget">
+                                        <h5 class="footer-title">Courses</h5>
+                                        <ul>
+                                            <li><a href="{% url 'course-url' %}">Courses</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center"> Hosanna Institute | ICT Department
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+        </footer>
+        <!-- Footer END ==== -->
+        <button class="back-to-top fa fa-chevron-up"></button>
+
+        <!-- External JavaScripts -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/highlight.pack.js' %}"></script>
+        <script src="{% static 'assets/vendors/bootstrap/js/popper.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js' %}"></script>
+        <script src="{% static 'assets/vendors/magnific-popup/magnific-popup.js' %}"></script>
+        <script src="{% static 'assets/vendors/counter/waypoints-min.js' %}"></script>
+        <script src="{% static 'assets/vendors/counter/counterup.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/imagesloaded/imagesloaded.js' %}"></script>
+        <script src="{% static 'assets/vendors/masonry/masonry.js' %}"></script>
+        <script src="{% static 'assets/vendors/masonry/filter.js' %}"></script>
+        <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.js' %}"></script>
+        <script src="{% static 'assets/js/functions.js' %}"></script>
+        <script src="{% static 'assets/js/contact.js' %}"></script>
+        <!-- Revolution JavaScripts Files -->
+        <script src="{% static 'assets/vendors/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+        <!-- Slider revolution 5.0 Extensions  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+        <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+        <script>
+            jQuery(document).ready(function() {
+                var ttrevapi;
+                var tpj = jQuery;
+                if (tpj("#rev_slider_486_1").revolution == undefined) {
+                    revslider_showDoubleJqueryError("#rev_slider_486_1");
+                } else {
+                    ttrevapi = tpj("#rev_slider_486_1").show().revolution({
+                        sliderType: "standard",
+                        jsFileLocation: "{% static 'assets/vendors/revolution/js'%}/",
+                        sliderLayout: "fullwidth",
+                        dottedOverlay: "none",
+                        delay: 5000,
+                        navigation: {
+                            keyboardNavigation: "on",
+                            keyboard_direction: "horizontal",
+                            mouseScrollNavigation: "off",
+                            mouseScrollReverse: "default",
+                            onHoverStop: "on",
+                            touch: {
+                                touchenabled: "on",
+                                swipe_threshold: 75,
+                                swipe_min_touches: 1,
+                                swipe_direction: "horizontal",
+                                drag_block_vertical: false
+                            },
+                            arrows: {
+                                style: "uranus",
+                                enable: true,
+                                hide_onmobile: false,
+                                hide_onleave: false,
+                                tmp: '',
+                                left: {
+                                    h_align: "left",
+                                    v_align: "center",
+                                    h_offset: 10,
+                                    v_offset: 0
+                                },
+                                right: {
+                                    h_align: "right",
+                                    v_align: "center",
+                                    h_offset: 10,
+                                    v_offset: 0
+                                }
+                            },
+
+                        },
+                        viewPort: {
+                            enable: true,
+                            outof: "pause",
+                            visible_area: "80%",
+                            presize: false
+                        },
+                        responsiveLevels: [1240, 1024, 778, 480],
+                        visibilityLevels: [1240, 1024, 778, 480],
+                        gridwidth: [1240, 1024, 778, 480],
+                        gridheight: [768, 600, 600, 600],
+                        lazyType: "none",
+                        parallax: {
+                            type: "scroll",
+                            origo: "enterpoint",
+                            speed: 400,
+                            levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 46, 47, 48, 49, 50, 55],
+                            type: "scroll",
+                        },
+                        shadow: 0,
+                        spinner: "off",
+                        stopLoop: "off",
+                        stopAfterLoops: -1,
+                        stopAtSlide: -1,
+                        shuffle: "off",
+                        autoHeight: "off",
+                        hideThumbsOnMobile: "off",
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLilmit: 0,
+                        debugMode: false,
+                        fallbacks: {
+                            simplifyAll: "off",
+                            nextSlideOnWindowFocus: "off",
+                            disableFocusListener: false,
+                        }
+                    });
+                }
+            });
+        </script>
+</body>
+
+</html>
+<!-- Header Top END ==== -->

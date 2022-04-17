@@ -1,0 +1,116 @@
+{% extends "hosannaWebsite/header.html" %}
+{% load static %}
+{% block content %}
+<!-- Content -->
+<div class="page-content bg-white">
+    <!-- inner page banner -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static 'assets/images/banner/contact.jpg' %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">Contact Us</h1>
+             </div>
+        </div>
+    </div>
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb row END -->
+
+    <!-- inner page banner -->
+    <div class="page-banner contact-page section-sp2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 m-b30">
+                    <div class="bg-primary text-white contact-info-bx">
+                        <h2 class="m-b10 title-head">Contact <span>Information</span></h2>
+                        <p>Inform us on any complaint or suggestions, We sure give the best comfort</p>
+                        <div class="widget widget_getintuch">	
+                            <ul>
+                                <li><i class="ti-location-pin"></i>1, Hanna Abehun Street, off Alhaji Bakare Street, Ijeododo, Ijegun, Lagos State</li>
+                                <li><i class="ti-location-pin"></i>33, Camp Davies Road, Ayobo - Ipaja, Lagos State</li>
+                                <li><i class="ti-mobile"></i>+2348034887708 (24/7 Support Line)</li>
+                                <li><i class="ti-email"></i>support@hosannaprints.com</li>
+                            </ul>
+                        </div>
+                        <h5 class="m-t0 m-b20">Follow Us</h5>
+                        <ul class="list-inline contact-social-bx">
+                            <li><a href="https://facebook.com/Hosanna-Printing-Copy-Center-100981805064433/" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/JMustorpha" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    {% if text %}
+                    <div class="alert alert-warning">
+                        {{ text }}
+                    </div>
+                    {% endif %}
+                    <form class="contact-bx " action="{% url 'contact-url' %}" method="POST">
+                        {% csrf_token %}
+                    <div class="ajax-message"></div>
+                        <div class="heading-bx left">
+                            <h2 class="title-head">Get In <span>Touch</span></h2>
+                            <p>Inform us on any complaint or suggestions, We sure give the best comfort</p>
+                        </div>
+                        <div class="row placeani">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label>Your Name</label>
+                                        <input name="name" type="text" required class="form-control valid-character">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="input-group"> 
+                                        <label>Your Email Address</label>
+                                        <input name="email" type="email" class="form-control" required >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label>Your Phone</label>
+                                        <input name="phone" type="text" required class="form-control int-value">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label>Subject</label>
+                                        <input name="subject" type="text" required class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label>Type Message</label>
+                                        <textarea name="message" rows="4" class="form-control" required ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <button name="submit" type="submit" value="Submit" class="btn button-md"> Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- inner page banner END -->
+</div>
+<!-- Content END-->
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends "hosannaWebsite/header.html" %} {% load static %} {% block content %}
+<!-- Content -->
+<div class="page-content bg-white">
+    <!-- inner page banner -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static 'assets/images/banner/news.jpg' %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">News</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li>News</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb row END -->
+    <!-- contact area -->
+    <div class="content-block">
+        <div class="section-area section-sp1">
+            <div class="container">
+                <div class="row">
+                    <!-- Left part start -->
+                    <div class="col-lg-8">
+                        {% for news in News %}
+                        <div class="blog-post blog-md clearfix">
+                            <div class="ttr-post-media">
+                                <a href="{% url 'news-detail' news.slug %}"><img class="news" src="{{ news.featured_image.url }}" alt=""></a>
+                            </div>
+                            <div class="ttr-post-info">
+                                <ul class="media-post">
+                                    <li><a href=""><i class="fa fa-calendar-o"></i>{{news.date_created|date}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                    <li><a href=""><i class="fa fa-clock-o"></i>{{news.time_created|time}}</a></li>
+                                </ul>
+                                <h5 class="post-title"><a href="{% url 'news-detail' news.slug %}">{{news.title}}</a></h5>
+                                <p>{{news.content|striptags|truncatechars:150|safe}}</p>
+                                <div class="post-extra">
+                                    <a href="{% url 'news-detail' news.slug %}" class="btn-link">READ MORE</a>
+                                    <a href="" class="comments-bx"><i class="fa fa-user-o"></i>By {{news.author|default:'anonymous'}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %} {% if is_paginated %}
+                        <!-- Pagination start -->
+                        <div class="pagination-bx rounded-sm gray clearfix">
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                <li class="previous"><a href="?page={{page_obj.previous_page_number}}"><i class="ti-arrow-left"></i> Prev</a></li>
+                                {% endif %} {% for page in page_obj.paginator.page_range %} {% if page == page_obj.number %}
+                                <li class="active">
+                                    {% else %}
+                                    <li class="">
+                                        {% endif %}
+                                        <a href="?page={{page}}">{{page}}</a></li>
+                                    {% endfor %} {% if page_obj.has_next %}
+                                    <li class="next"><a href="?page={{page_obj.next_page_number}}">Next <i class="ti-arrow-right"></i></a></li>
+                                    {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Pagination END -->
+                        {% endif %}
+                    </div>
+                    <!-- Left part END -->
+                    <!-- Side bar start -->
+                    <div class="col-lg-4 sticky-top">
+                        <aside class="side-bar sticky-top">
+                            <div class="widget">
+                                <h6 class="widget-title">Search</h6>
+                                <div class="search-bx style-1">
+                                    <form role="search" action="{% url 'news-url' %}" method="get">
+                                        {% csrf_token %}
+                                        <div class="input-group">
+                                            <input name="search" class="form-control" placeholder="Enter your keywords..." type="text">
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="fa fa-search text-primary"></button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="widget recent-posts-entry">
+                                <h6 class="widget-title">Recent Posts</h6>
+                                <div class="widget-post-bx">
+                                    {% for recents in Recent %}
+                                    <div class="widget-post clearfix">
+                                        <div class="ttr-post-media"> <img src="{{recents.featured_image.url}}" width="200" height="143" alt=""> </div>
+                                        <div class="ttr-post-info">
+                                            <div class="ttr-post-header">
+                                                <h6 class="post-title"><a href="{% url 'news-detail' recents.slug %}">{{recents.title}}</a></h6>
+                                                {{recents.content|striptags|truncatechars:30}}
+                                            </div>
+                                            <ul class="media-post">
+                                                <li><a href=""><i class="fa fa-calendar-o"></i>{{recents.date_created|date}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="widget widget-newslatter">
+                                <h6 class="widget-title">Newsletter</h6>
+                                <div class="news-box">
+                                    <p>Enter your e-mail and subscribe to our newsletter.</p>
+                                    <form class="" action="{% url 'subscription-url' %}" method="post">
+                                        {% csrf_token %}
+                                        <div class="ajax-message"></div>
+                                        <div class="input-group">
+                                            <input name="subscription" required="required" type="email" class="form-control" placeholder="Your Email Address" />
+                                            <input type="hidden" name="next" value="{{ request.path }}">
+                                            <button name="submit" value="Submit" type="submit" class="btn black radius-no">
+                                                <i class="fa fa-paper-plane-o"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="widget widget_tag_cloud">
+                                <h6 class="widget-title">Tags</h6>
+                                <div class="tagcloud">
+                                    {% for tag in Tag %}
+                                    <a href="?tag={{tag.pk}}">{{tag.name}}</a> {% endfor %}
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <!-- Side bar END -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content END-->
+{% endblock %}

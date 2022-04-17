@@ -1,0 +1,116 @@
+{% extends "hosannaWebsite/header.html" %} {% load static %} {% block content %}
+<!-- Content -->
+<div class="page-content bg-white">
+    <!-- inner page banner -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static 'assets/images/banner/banner1.jpg' %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">Event Details</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'event-url' %}">Event</a></li>
+                <li>{{Event.title}}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb row END -->
+    <!-- inner page banner END -->
+    <div class="content-block">
+        <!-- About Us -->
+        <div class="section-area section-sp1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7 col-sm-12">
+                        <div class="courses-post">
+                            <div class="ttr-post-media media-effect">
+                                <a href="{{Event.slug}}"><img src="{{Event.featured_image.url}}" alt=""></a>
+                            </div>
+                            <div class="ttr-post-info">
+                                <div class="ttr-post-title ">
+                                    <h2 class="post-title">{{Event.title}}</h2>
+                                </div>
+                                <div class="ttr-post-text">
+                                    <p>{{Event.short_note}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="courese-overview" id="overview">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-5">
+                                    <ul class="course-features">
+                                        <li><i class="ti-book"></i> <span class="label">Topics</span> <span class="value">{{Event.topic}}</span></li>
+                                        <li><i class="ti-help-alt"></i> <span class="label">Host</span> <span class="value">{{Event.host}}</span></li>
+                                        <li><i class="ti-time"></i> <span class="label">Location</span> <span class="value">{{Event.location}}</span></li>
+                                        <li><i class="ti-stats-up"></i> <span class="label">Skill level</span> <span class="value">{{Event.skill_level}}</span></li>
+                                        <li><i class="ti-smallcap"></i> <span class="label">Language</span> <span class="value">{{Event.language}}</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12 col-lg-7">
+                                    <p>{{Event.event_description|safe}}</p>
+                                    <h5 class="m-b5">Event Content</h5>
+                                    <ul class="list-checked primary">
+                                        {% for Content in Event.content_set.all %}
+                                        <li>{{Content.content}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-12 m-b30">
+                        <div class="bg-primary text-white contact-info-bx m-b30">
+                            <h2 class="m-b10 title-head">Contact <span>Information</span></h2>
+                            <p>Inform us on any complaint or suggestions, We sure give the best comfort</p>
+                            <div class="widget widget_getintuch">
+                                <ul>
+                                    <li><i class="ti-location-pin"></i>1, Hanna Abehun Street, off Alhaji Bakare Street, Ijeododo, Ijegun, Lagos State</li>
+                                    <li><i class="ti-location-pin"></i>33, Camp Davies Road, Ayobo - Ipaja, Lagos State</li>
+                                    <li><i class="ti-mobile"></i>+2348034887708 (24/7 Support Line)</li>
+                                    <li><i class="ti-email"></i>support@hosannaprints.com</li>
+                                </ul>
+                            </div>
+                            <h5 class="m-t0 m-b20">Follow Us</h5>
+                            <ul class="list-inline contact-social-bx">
+                                <li><a href="https://facebook.com/Hosanna-Printing-Copy-Center-100981805064433/" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/JMustorpha" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="mapouter">
+                            <div class="gmap_canvas"><iframe width="320" height="440" id="gmap_canvas" src="https://maps.google.com/maps?q=Camp%20Davies%20Road,%20Ayobo,%20Lagos&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                <a href="https://123movies-a.com"></a><br>
+                                <style>
+                                    .mapouter {
+                                        position: relative;
+                                        text-align: right;
+                                        height: 440px;
+                                        width: 320px;
+                                    }
+                                </style><a href="https://www.embedgooglemap.net">custom google map embed</a>
+                                <style>
+                                    .gmap_canvas {
+                                        overflow: hidden;
+                                        background: none!important;
+                                        height: 440px;
+                                        width: 320px;
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact area END -->
+
+</div>
+<!-- Content END-->
+{% endblock %}
