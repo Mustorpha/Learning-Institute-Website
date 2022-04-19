@@ -173,7 +173,7 @@ def contact(request):
         #mail = EmailMessage(
             #subject,
             #'email : ' + email + message,
-            #to=['hosannap@hosannaprint.com.ng'],
+            #to=['demo@example.com'],
         #)
         #mail.send()
 
