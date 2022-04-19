@@ -163,7 +163,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'hosannaprint.com.ng'
-EMAIL_HOST_USER = 'hosanna@hosannaprint.com.ng'
-EMAIL_HOST_PASSWORD = 'okeze_manasseh'
+EMAIL_HOST = 'example.com'
+EMAIL_HOST_USER = 'demo@example.com'
+EMAIL_HOST_PASSWORD = 'admin'
 EMAIL_PORT = 587
